@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "雙軌說話者辨識",
+  "version": "1.0.0",
+  "identifier": "app.dualtrack.diarization",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "雙軌說話者辨識",
+        "width": 1180,
+        "height": 760,
+        "minWidth": 820,
+        "minHeight": 560,
+        "dragDropEnabled": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' http://127.0.0.1:8765 ws://127.0.0.1:8765 ipc: http://ipc.localhost; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["app", "dmg"],
+    "category": "Productivity",
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"],
+    "resources": {
+      "../python-sidecar/*.py": "python-sidecar/",
+      "../python-sidecar/requirements.txt": "python-sidecar/requirements.txt",
+      "../python-sidecar/backends/*.py": "python-sidecar/backends/"
+    },
+    "macOS": {
+      "minimumSystemVersion": "12.3"
+    }
+  }
+}
