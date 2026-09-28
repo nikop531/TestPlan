@@ -1,0 +1,25 @@
+# Sidecar API
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+httpx>=0.27
+pydantic>=2.6
+
+# Audio
+numpy>=1.26,<2.3
+scipy>=1.11
+soundfile>=0.12
+sounddevice>=0.4.6
+
+# Diarization (Nemotron-3-Diarization via NeMo) on torch with MPS
+torch>=2.6
+nemo_toolkit[asr]>=3.0
+
+# ASR and Traditional Chinese conversion
+faster-whisper>=1.1
+opencc-python-reimplemented>=0.1.7
+
+# Hugging Face, Keychain, battery state
+huggingface_hub>=0.24
+keyring>=25
+psutil>=5.9

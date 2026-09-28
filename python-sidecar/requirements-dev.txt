@@ -1,0 +1,12 @@
+# Lightweight set for tests and demo mode (DIARIZATION_MOCK=1): no torch, NeMo or Whisper.
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+httpx>=0.27
+pydantic>=2.6
+numpy>=1.26,<2.3
+scipy>=1.11
+soundfile>=0.12
+keyring>=25
+psutil>=5.9
+pytest>=8
